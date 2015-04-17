@@ -1,16 +1,15 @@
 angular.module('beerApp', [])
-  .controller('beerCtrl', function() {
-    var todoList = this;
-    todoList.todos = [
+  .controller('beerCtrl', function($scope) {
+    $scope.todos = [
       {text:'learn angular', done:true},
       {text:'build an angular app', done:false}];
  
-    todoList.addTodo = function() {
+    $scope.addTodo = function() {
       todoList.todos.push({text:todoList.todoText, done:false});
       todoList.todoText = '';
     };
  
-    todoList.remaining = function() {
+    $scope.remaining = function() {
       var count = 0;
       angular.forEach(todoList.todos, function(todo) {
         count += todo.done ? 0 : 1;
@@ -18,7 +17,7 @@ angular.module('beerApp', [])
       return count;
     };
  
-    todoList.archive = function() {
+    $scope.archive = function() {
       var oldTodos = todoList.todos;
       todoList.todos = [];
       angular.forEach(oldTodos, function(todo) {

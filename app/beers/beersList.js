@@ -10,8 +10,14 @@ angular.module('beers.list', [])
             {name: 'Maxime', surname: 'Patrick', favorite:'blondes'},
             {name: 'Jean', surname: 'Jean', favorite:'brunes'}];
 
+
         $scope.addPerson = function () {
-            $scope.persons.push($scope.newPerson);
+            if($scope.personForm.$invalid)
+                alert("Veuillez renseigner tous les champs");
+            else {
+                $scope.persons.push($scope.newPerson);
+                $scope.newPerson = {};
+            }
         };
 
         $scope.remaining = function () {

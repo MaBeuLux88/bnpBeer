@@ -3,15 +3,15 @@
 angular.module('beers.list', [])
     .controller('BeersListCtrl', ['$scope', function ($scope) {
 
-        $scope.view = {title: 'My Super Title !'};
+        $scope.newPerson = {};
+        $scope.view = {title: 'Mon super Titre !'};
 
         $scope.persons = [
-            {name: 'Maxime', surname: 'Patrick', favorite:'blonde'},
-            {name: 'Jean', surname: 'Jean', favorite:'brune'}];
+            {name: 'Maxime', surname: 'Patrick', favorite:'blondes'},
+            {name: 'Jean', surname: 'Jean', favorite:'brunes'}];
 
-        $scope.addTodo = function () {
-            $scope.todos.push({text: $scope.todoText, done: false});
-            $scope.todoText = '';
+        $scope.addPerson = function () {
+            $scope.persons.push($scope.newPerson);
         };
 
         $scope.remaining = function () {

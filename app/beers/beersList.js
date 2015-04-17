@@ -12,6 +12,7 @@ angular.module('beers.list', [])
 
         $scope.addPerson = function () {
             $scope.persons.push($scope.newPerson);
+            $scope.newPerson = {};
         };
 
         $scope.remaining = function () {

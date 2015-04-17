@@ -7,17 +7,16 @@ angular.module('beers.list', [])
         $scope.view = {title: 'Mon super Titre !'};
 
         $scope.persons = [
-            {name: 'Maxime', surname: 'Patrick', favorite:'blondes'},
-            {name: 'Jean', surname: 'Jean', favorite:'brunes'}];
+            {name: 'Maxime', surname: 'Patrick', favorite: 'blondes'},
+            {name: 'Jean', surname: 'Jean', favorite: 'brunes'}];
 
 
         $scope.addPerson = function () {
-            if($scope.personForm.$invalid)
-                alert("Veuillez renseigner tous les champs");
-            else {
-                $scope.persons.push($scope.newPerson);
-                $scope.newPerson = {};
-            }
+            if ($scope.personForm.$invalid)
+                return;
+            $scope.persons.push($scope.newPerson);
+            $scope.newPerson = {};
+            $scope.personForm.$setPristine();
         };
 
         $scope.remaining = function () {

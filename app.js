@@ -1,27 +1,15 @@
 'use strict';
 
 angular
-  .module('beerApp', ['ngRoute', 'ui.bootstrap'])
+  .module('beerApp', ['ngRoute'])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/popular', {
-        templateUrl: 'views/movies.html',
-        controller: 'PopularCtrl'
-      })
-      .when('/search/:query', {
-        templateUrl: 'views/movies.html',
-        controller: 'SearchCtrl'
+      .when('/beer', {
+        templateUrl: 'views/beersList.tpl.html',
+        controller: 'BeerCtrl'
       })
       .otherwise({
-        redirectTo: '/popular'
+        redirectTo: '/'
       });
   });
 

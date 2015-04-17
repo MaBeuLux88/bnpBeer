@@ -1,5 +1,5 @@
 angular.module('beerApp', [])
-  .controller('beerCtrl', function($scope) {
+  .controller('BeerCtrl', function($scope) {
     $scope.todos = [
       {text:'learn angular', done:true},
       {text:'build an angular app', done:false}];

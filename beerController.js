@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('beerApp', [])
   .controller('BeerCtrl', function($scope) {
     $scope.todos = [

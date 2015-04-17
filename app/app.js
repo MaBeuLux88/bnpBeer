@@ -7,7 +7,7 @@ angular.module('beerApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/beersList.tpl.html',
+        templateUrl: 'app/beers/beersList.tpl.html',
         controller: 'BeersListCtrl'
       })
       .otherwise({

@@ -6,7 +6,8 @@
         </li>
     </ul>
     <form name="personForm" ng-submit="addPerson()" novalidate>
-        <input type="text" ng-model="newPerson.name" size="20" placeholder="Name" required>
+        <input type="text" name="personName" ng-model="newPerson.name" size="20" placeholder="Name" required>
+        <span ng-show="personForm.personName.$dirty && personForm.personName.$error.required">Renseigne ton nom</span>
         <input type="text" ng-model="newPerson.surname" size="20" placeholder="Surname" required>
         <input type="text" ng-model="newPerson.favorite" size="20" placeholder="Favorite" required>
         <button type="submit">Add</button>

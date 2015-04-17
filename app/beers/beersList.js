@@ -3,9 +3,11 @@
 angular.module('beers.list', [])
     .controller('BeersListCtrl', ['$scope', function ($scope) {
 
-        $scope.todos = [
-            {text: 'learn angular', done: true},
-            {text: 'build an angular app', done: false}];
+        $scope.view = {title: 'My Super Title !'};
+
+        $scope.persons = [
+            {name: 'Maxime', surname: 'Patrick', favorite:'blonde'},
+            {name: 'Jean', surname: 'Jean', favorite:'brune'}];
 
         $scope.addTodo = function () {
             $scope.todos.push({text: $scope.todoText, done: false});

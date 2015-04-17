@@ -14,4 +14,3 @@ angular.module('beerApp', [
         redirectTo: '/'
       });
   });
-

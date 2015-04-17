@@ -1,12 +1,14 @@
 'use strict';
 
-angular
-  .module('beerApp', ['ngRoute'])
+angular.module('beerApp', [
+  'ngRoute',
+  'beers.list'
+])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/beer', {
+      .when('/', {
         templateUrl: 'views/beersList.tpl.html',
-        controller: 'BeerCtrl'
+        controller: 'BeersListCtrl'
       })
       .otherwise({
         redirectTo: '/'

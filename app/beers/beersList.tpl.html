@@ -9,9 +9,12 @@
         <input type="text" name="personName" ng-model="newPerson.name" size="20" placeholder="Name" required>
         <input type="text" name="personSurname" ng-model="newPerson.surname" size="20" placeholder="Surname" required>
         <input type="text" name="favorite" ng-model="newPerson.favorite" size="20" placeholder="Favorite" required>
-        <span ng-show="personForm.personName.$dirty && personForm.personName.$error.required">Renseigne ton Name</span>
-        <span ng-show="personForm.personSurname.$dirty && personForm.Surname.$error.required">Renseigne ton Surname</span>
-        <span ng-show="personForm.favorite.$dirty && personForm.favorite.$error.required">Renseigne ta favorite binouze !</span>
         <button type="submit">Add</button>
+        <br>
+        <span ng-show="personForm.personName.$dirty && personForm.personName.$error.required">Renseigne ton Name</span>
+        <br>
+        <span ng-show="personForm.personSurname.$dirty && personForm.Surname.$error.required">Renseigne ton Surname</span>
+        <br>
+        <span ng-show="personForm.favorite.$dirty && personForm.favorite.$error.required">Renseigne ta favorite binouze !</span>
     </form>
 </div>

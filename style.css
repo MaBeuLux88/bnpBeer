@@ -1,5 +1,34 @@
-.done-true {
-  text-decoration: line-through;
-  color: grey;
+.tab-data tr td {
+    border: solid black 1px;
+    padding: 10px;
 }
 
+.tab-data {
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+    border-collapse: collapse;
+}
+
+.tab-form tr td {
+    padding: 10px;
+}
+
+.tab-form {
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+    border-collapse: collapse;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+.error {
+    color: red;
+}

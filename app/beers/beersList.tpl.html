@@ -1,21 +1,53 @@
-<div>
+<div class="div-beers">
     <h1>{{view.title}}</h1>
-    <ul>
-        <li ng-repeat="person in persons">
-            {{person.name}} {{person.surname}} aime les bières {{person.favorite}}
-        </li>
-    </ul>
+    <table class="tab-data">
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Favorite</th>
+        <th>Delete</th>
+        <tr>
+            <td><input type="text" ng-model="search.name"></td>
+            <td><input type="text" ng-model="search.surname"></td>
+            <td><input type="text" ng-model="search.favorite"></td>
+            <td></td>
+        </tr>
+        <tr ng-repeat="person in persons | filter:search">
+            <td>{{person.name}}</td>
+            <td>{{person.surname}}</td>
+            <td>{{person.favorite}}</td>
+            <td>
+                <button ng-click="removePerson(person)">X</button>
+            </td>
+        </tr>
+    </table>
     <form name="personForm" ng-submit="addPerson()" novalidate>
-        <input type="text" name="personName" ng-model="newPerson.name" size="20" placeholder="Name" required>
-        <input type="text" name="personSurname" ng-model="newPerson.surname" size="20" placeholder="Surname" required>
-        <input type="text" name="favorite" ng-model="newPerson.favorite" size="20" placeholder="Favorite" required>
-        <button type="submit">Add</button>
+        <table class="tab-form">
+            <tr>
+                <td>
+                    <input type="text" name="personName" ng-model="newPerson.name" size="20" placeholder="Name"
+                           required>
+                </td>
+                <td>
+                    <input type="text" name="personSurname" ng-model="newPerson.surname" size="20" placeholder="Surname"
+                           required>
+                </td>
+                <td>
+                    <input type="text" name="favorite" ng-model="newPerson.favorite" size="20" placeholder="Favorite"
+                           required>
+                </td>
+                <td>
+                    <button type="submit">Add</button>
+                </td>
+            </tr>
+        </table>
         <br>
 
-        <div ng-show="personForm.$submitted && personForm.$invalid">
+        <div class="error" ng-show="personForm.$submitted && personForm.$invalid">
             <div ng-show="personForm.personName.$error.required">Renseigne ton Name</div>
             <div ng-show="personForm.personSurname.$error.required">Renseigne ton Surname</div>
             <div ng-show="personForm.favorite.$error.required">Renseigne ta favorite binouze !</div>
         </div>
     </form>
+
+
 </div>

@@ -1,16 +1,17 @@
 'use strict';
 
-angular.module('beerApp', [
-  'ngRoute',
-  'beers.list'
-])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'app/beers/beersList.tpl.html',
-        controller: 'BeersListCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+angular.module('beerApp', ['ngRoute', 'beers.list', 'svgModule'])
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/beer', {
+                templateUrl: 'app/beers/beersList.tpl.html',
+                controller: 'BeersListCtrl'
+            })
+            .when('/svg', {
+                templateUrl: 'app/svg/svg.tpl.html',
+                controller: 'SvgCtrl'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    });

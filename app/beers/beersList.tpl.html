@@ -1,17 +1,38 @@
 <div class="div-beers">
     <h1>{{view.title}}</h1>
-    <table class="tab-data">
-        <th>Name</th>
-        <th>Surname</th>
-        <th>Favorite</th>
-        <th>Delete</th>
+    <!--<span class="label">Ordered By: {{orderByField}}, Reverse Sort: {{reverseSort}}</span><br><br>-->
+    <table class="tab-data" ng-init="orderByField='name'">
         <tr>
-            <td><input type="text" ng-model="search.name"></td>
-            <td><input type="text" ng-model="search.surname"></td>
-            <td><input type="text" ng-model="search.favorite"></td>
-            <td></td>
+            <th><a ng-click="orderByField='name'; reverseSort = !reverseSort">
+                <span>Name </span>
+            <span ng-show="orderByField == 'name'">
+                <span ng-show="!reverseSort">^</span>
+                <span ng-show="reverseSort">v</span>
+            </span>
+            </a></th>
+            <th><a ng-click="orderByField='surname'; reverseSort = !reverseSort">
+                <span>Surname </span>
+            <span ng-show="orderByField == 'surname'">
+                <span ng-show="!reverseSort">^</span>
+                <span ng-show="reverseSort">v</span>
+            </span>
+            </a></th>
+            <th><a ng-click="orderByField='favorite'; reverseSort = !reverseSort">
+                <span>Favorite </span>
+            <span ng-show="orderByField == 'favorite'">
+                <span ng-show="!reverseSort">^</span>
+                <span ng-show="reverseSort">v</span>
+            </span>
+            </a></th>
+            <th></th>
         </tr>
-        <tr ng-repeat="person in persons | filter:search">
+        <tr>
+            <td><input type="text" ng-model="search.name" /></td>
+            <td><input type="text" ng-model="search.surname" /></td>
+            <td><input type="text" ng-model="search.favorite" /></td>
+            <td>Delete</td>
+        </tr>
+        <tr ng-repeat="person in persons | filter : search | orderBy : orderByField : reverseSort">
             <td>{{person.name}}</td>
             <td>{{person.surname}}</td>
             <td>{{person.favorite}}</td>
@@ -25,15 +46,15 @@
             <tr>
                 <td>
                     <input type="text" name="personName" ng-model="newPerson.name" size="20" placeholder="Name"
-                           required>
+                           required/>
                 </td>
                 <td>
                     <input type="text" name="personSurname" ng-model="newPerson.surname" size="20" placeholder="Surname"
-                           required>
+                           required/>
                 </td>
                 <td>
                     <input type="text" name="favorite" ng-model="newPerson.favorite" size="20" placeholder="Favorite"
-                           required>
+                           required/>
                 </td>
                 <td>
                     <button type="submit">Add</button>

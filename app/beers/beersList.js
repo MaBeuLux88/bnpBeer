@@ -12,7 +12,9 @@ angular.module('beers.list', [])
             {name: 'Pierre', surname: 'Dupond', favorite: 'blanches'},
             {name: 'Paul', surname: 'Dance', favorite: 'fraiches'},
             {name: 'Jacques', surname: 'Langue', favorite: 'aromatisées'},
-            {name: 'Pierre-Paul', surname: 'Jacques', favorite: 'fortes'}
+            {name: 'Pierre-Paul', surname: 'Jacques', favorite: 'fortes'},
+            {name: 'Pierre-Paul', surname: 'Jacques', favorite: 'fines'},
+            {name: 'Pierre-Paul', surname: 'Jacques', favorite: 'fat-free'}
         ];
 
         $scope.addPerson = function () {

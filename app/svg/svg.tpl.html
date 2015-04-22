@@ -1,71 +1,23 @@
 <div>
     <h1>{{view.title}}</h1>
-    <table class="tab-data" ng-init="orderByField='name'">
-        <tr>
-            <th><a ng-click="orderByField='name'; reverseSort = !reverseSort">
-                <span>Name </span>
-            <span ng-show="orderByField == 'name'">
-                <span ng-show="!reverseSort">^</span>
-                <span ng-show="reverseSort">v</span>
-            </span>
-            </a></th>
-            <th><a ng-click="orderByField='surname'; reverseSort = !reverseSort">
-                <span>Surname </span>
-            <span ng-show="orderByField == 'surname'">
-                <span ng-show="!reverseSort">^</span>
-                <span ng-show="reverseSort">v</span>
-            </span>
-            </a></th>
-            <th><a ng-click="orderByField='favorite'; reverseSort = !reverseSort">
-                <span>Favorite </span>
-            <span ng-show="orderByField == 'favorite'">
-                <span ng-show="!reverseSort">^</span>
-                <span ng-show="reverseSort">v</span>
-            </span>
-            </a></th>
-            <th></th>
-        </tr>
-        <tr>
-            <td><input type="text" ng-model="search.name" /></td>
-            <td><input type="text" ng-model="search.surname" /></td>
-            <td><input type="text" ng-model="search.favorite" /></td>
-            <td>Delete</td>
-        </tr>
-        <tr ng-repeat="person in persons | filter : search | orderBy : orderByField : reverseSort">
-            <td>{{person.name}}</td>
-            <td>{{person.surname}}</td>
-            <td>{{person.favorite}}</td>
-            <td>
-                <button ng-click="removePerson(person)">X</button>
-            </td>
-        </tr>
-    </table>
-    <form name="personForm" ng-submit="addPerson()" novalidate>
-        <table class="tab-form">
-            <tr>
-                <td>
-                    <input type="text" name="personName" ng-model="newPerson.name" size="20" placeholder="Name"
-                           required/>
-                </td>
-                <td>
-                    <input type="text" name="personSurname" ng-model="newPerson.surname" size="20" placeholder="Surname"
-                           required/>
-                </td>
-                <td>
-                    <input type="text" name="favorite" ng-model="newPerson.favorite" size="20" placeholder="Favorite"
-                           required/>
-                </td>
-                <td>
-                    <button type="submit">Add</button>
-                </td>
-            </tr>
-        </table>
-        <div class="error" ng-show="personForm.$submitted && personForm.$invalid">
-            <div ng-show="personForm.personName.$error.required">Renseigne ton Name</div>
-            <div ng-show="personForm.personSurname.$error.required">Renseigne ton Surname</div>
-            <div ng-show="personForm.favorite.$error.required">Renseigne ta favorite binouze !</div>
-        </div>
-    </form>
 
+    <svg width="220" height="50" viewBox="0 0 220 50"
+         xmlns="http://www.w3.org/2000/svg">
+        <desc>Exemple SVG - Barre de lecture</desc>
+
+        <rect x="5" y="5" rx="10" width="210" height="40" fill="none" stroke="grey"
+              stroke-width="2" />
+        <line x1="70" y1="5" x2="70" y2="45" stroke-width="3" stroke="grey" />
+        <line x1="140" y1="5" x2="140" y2="45" stroke-width="3" stroke="grey" />
+
+        <polyline fill="grey" stroke-width="0" style="cursor:pointer;" onclick="alert("play");"
+        points="25,14 45,25 25,36 30,25" />
+        <rect x="95" y="14" width="15" height="22" fill="white" stroke="none"
+              style="cursor:pointer;" onclick="alert("pause");" />
+        <polyline fill="grey" stroke-width="0" style="cursor:pointer;" onclick="alert("pause");"
+        points="95,14 95,36 100,36 100,14 105,14 105,36 110,36 110,14" />
+        <rect x="165" y="14" width="22" height="22" fill="grey" stroke-width="0"
+              style="cursor:pointer;" onclick="alert("stop");" />
+    </svg>
 
 </div>

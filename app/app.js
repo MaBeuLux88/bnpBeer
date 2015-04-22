@@ -3,7 +3,7 @@
 angular.module('beerApp', ['ngRoute', 'beers.list', 'svgModule'])
     .config(function ($routeProvider) {
         $routeProvider
-            .when('/beer', {
+            .when('/', {
                 templateUrl: 'app/beers/beersList.tpl.html',
                 controller: 'BeersListCtrl'
             })
